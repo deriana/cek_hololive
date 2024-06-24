@@ -3,12 +3,20 @@ document.addEventListener("DOMContentLoaded", function() {
     const btn = document.getElementById("btn");
     const container = document.querySelector(".container");
 
-    btn.addEventListener("click", function() {
+    userNameInput.addEventListener("keydown", function(event) {
+        if (event.key === "Enter") {
+            handleButtonClick();
+        }
+    });
+
+    btn.addEventListener("click", handleButtonClick);
+    
+    function handleButtonClick() {
         const userName = userNameInput.value.trim();
         
         if (userName === "") {
             alert("Masukkan nama Anda terlebih dahulu.");
-            return;
+            return; 
         }
     
         const hololive = [
@@ -84,13 +92,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
         const randomWaifu = randomHololive();
         container.innerHTML = `
-            <div>
-                <h2>${userName} Waifu Kamu Adalah <br> ${randomWaifu.name}</h2>
+            <div class="random">
+                <h3>${userName} Waifu Kamu Adalah</h3>
+                <h2>${randomWaifu.name}</h2>
             </div>
             <a href="${randomWaifu.link}" target="_blank">
                 <img src="${randomWaifu.img}" alt="${randomWaifu.name}">
             </a>
             <button onclick="window.location.reload();">Coba Lagi ?</button>
         `;
-    });
+    }        
 });
