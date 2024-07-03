@@ -13,9 +13,26 @@ body {
     height: 100vh;
 }
 
+header {
+    width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: auto;
+}
+
+.fa-brands {
+    color: white;
+    font-size: 2em;
+}
+
+.fa-brands:hover {
+    color: gray;
+}
+
 .container {
     width: 500px;
-    height: 700px;
+    height: 500px;
     border: 2px solid white;
     border-radius: 20px;
     -webkit-border-radius: 20px;
@@ -99,16 +116,60 @@ button:hover {
 }
 
 img {
-    width: 250px;
+    width: 300px;
+    height: 300px;
     border-radius: 20px;
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
     -ms-border-radius: 20px;
     -o-border-radius: 20px;
-    /* max-height: 80%; */
 }
 
 .name {
     font-style: bold;
     font-size: 1.5em;
+}
+
+@media (max-width: 800px) {
+    header {
+        width: 100%;
+        height: auto;
+    }
+    
+    .fa-brands {
+        font-size: 1.5em;
+    }
+    body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .container {
+        width: 300px;
+        height: 300px;
+    }
+
+    input {
+        width: 250px;
+        height: 40px;
+    }
+
+    .title {
+        font-size: 1.3em;
+    }
+
+    h2,h3 {
+        font-size: 1em;
+    }
+
+    img {
+        width: 150px;
+        height: 150px;
+    }
+
+    button {
+        font-size: 13   px;
+    }
 }
